@@ -6,7 +6,7 @@ leds = ledstrip()
 
 @app.route('/')
 def homepage():
-	return render_template('homepage.html')
+	return render_template('index.html')
 
 @app.route('/on', methods=['POST'])
 def on():
