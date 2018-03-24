@@ -38,4 +38,8 @@ Reload .profile with `source .profile`
 
         mkproject <projectname>
         pip install Flask ipython sqlalchemy flask-sqlalchemy flask-migrate Flask-Login py-bcrypt flask-bcrypt Flask-Restless Adafruit_PCA9685 flask_script
-        
+
+
+## Set up virtualenvwrapper hooks for the leds project
+
+Copy the contents of the `virtualenvwrapper` directory to ~/.virtualenvs/leds/bin
