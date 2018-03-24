@@ -1,9 +1,9 @@
-from app import app, db
-#import models
+from flask import Flask
+from ledstrip import ledstrip
 import views
 
-#from entries.blueprint import entries
-#app.register_blueprint(entries, url_prefix='/entries')
+app = Flask(__name__)
+leds = ledstrip()
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0')

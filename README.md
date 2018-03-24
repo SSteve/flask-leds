@@ -37,7 +37,7 @@ Reload .profile with `source .profile`
 ## Set up Flask project
 
         mkproject <projectname>
-        pip install Flask ipython sqlalchemy flask-sqlalchemy flask-migrate Flask-Login py-bcrypt flask-bcrypt Flask-Restless Adafruit_PCA9685 flask_script
+        pip install Flask Adafruit_PCA9685
 
 
 ## Set up virtualenvwrapper hooks for the leds project

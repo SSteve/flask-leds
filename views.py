@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect
-from app import app, leds
+from main import app, leds
 
 @app.route('/')
 def homepage():
