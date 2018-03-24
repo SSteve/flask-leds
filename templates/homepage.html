@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+	{% block content %}
+	<form action="/on" method="post">
+		<button type="submit" id="On" class="btn btn-default">On</button>
+	</form>
+	<form action="/off" method="post">
+		<button type="submit" id="Off" class="btn">Off</button>
+	</form>
+	{% endblock %}
