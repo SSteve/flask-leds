@@ -37,5 +37,5 @@ Reload .profile with `source .profile`
 ## Set up Flask project
 
         mkproject <projectname>
-        pip install Flask ipython sqlalchemy flask-sqlalchemy flask-migrate Flask-Login py-bcrypt flask-bcrypt Flask-Restless Adafruit_PCA9685
+        pip install Flask ipython sqlalchemy flask-sqlalchemy flask-migrate Flask-Login py-bcrypt flask-bcrypt Flask-Restless Adafruit_PCA9685 flask_script
         
