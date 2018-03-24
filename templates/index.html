@@ -1,6 +1,4 @@
 {% extends "base.html" %}
-
-	
 	{% block content %}
 	<form action="/on" method="post">
 		<button type="submit" id="On" class="btn btn-default">On</button>
@@ -9,6 +7,22 @@
 		<button type="submit" id="Off" class="btn">Off</button>
 	</form>
 	<form action="/what" method="post">
-		<input type='text' id="flat" />
+		<input type='text' id="color-picker" />
 	</form>
+	{% endblock %}
+	
+	{% block extra_styles %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/spectrum.css') }}">
+	{% endblock %}
+	
+	{% block extra_end_scripts %}
+	<script src="{{ url_for('static', filename='js/spectrum.js')}}"></script>
+	<script>
+		$("#color-picker").spectrum({
+			color: "#808",
+			flat: true,
+			showInput: true,
+			preferredFormat: "rgb"
+		});
+	</script>
 	{% endblock %}
