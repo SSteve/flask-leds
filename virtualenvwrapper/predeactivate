@@ -3,3 +3,4 @@
 
 export PYTHONPATH=${OLDPYTHONPATH}
 unset FLASK_APP
+unset FLASK_DEBUG
