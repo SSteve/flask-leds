@@ -43,3 +43,15 @@ Reload .profile with `source .profile`
 ## Set up virtualenvwrapper hooks for the leds project
 
 Copy the contents of the `virtualenvwrapper` directory to ~/.virtualenvs/leds/bin
+
+## Wiring diagram
+
+An LED Strip tutorial at Adafruit:
+
+[LED Strips](https://learn.adafruit.com/rgb-led-strips)
+
+This shows wiring for a single LED.
+
+![Wiring Diagram](documentation/WiringDiagram.jpg)
+
+From: [Adafruit forum](https://forums.adafruit.com/viewtopic.php?f=19&t=92144&p=466769&hilit=Pca9685#p466769)
