@@ -10,14 +10,19 @@ def homepage():
 
 @app.route('/on', methods=['POST'])
 def on():
-	leds.red_on()
+	print('On')
+	leds.on()
 	return redirect('/')
 
 @app.route('/off', methods=['POST'])
 def off():
-	leds.red_off()
+	leds.off()
+	return redirect('/')
+
+@app.route('/setcolor/<color>', methods=['POST'])
+def setColor(color):
+	leds.set_color(color)
 	return redirect('/')
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0')
-
