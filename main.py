@@ -8,17 +8,17 @@ leds = ledstrip()
 def homepage():
 	return render_template('index.html')
 
-@app.route('/on', methods=['POST'])
+@app.route('/on', methods=['POST', 'GET'])
 def on():
 	print('On')
 	leds.on()
-	return redirect('/')
+	return jsonify(result="On")
 
 @app.route('/off', methods=['POST', 'GET'])
 def off():
 	print('Off')
 	leds.off()
-	return redirect('/')
+	return jsonify(result="Off")
 
 @app.route('/setcolor/<color>', methods=['POST', 'GET'])
 def setColor(color):

@@ -1,11 +1,8 @@
 {% extends "base.html" %}
 	{% block content %}
-	<form action="/on" method="post">
-		<button type="submit" id="On" class="btn btn-default">On</button>
-	</form>
-	<form action="/off" method="get">
-		<button type="submit" id="Off" class="btn">Off</button>
-	</form>
+	<button id="On" class="btn btn-default">On</button>
+	
+	<button id="Off" class="btn">Off</button>
 	
 	<input type='text' id="color-picker" />
 	
@@ -20,24 +17,33 @@
 	{% block extra_end_scripts %}
 	<script src="{{ url_for('static', filename='js/spectrum.js')}}"></script>
 	<script>
+		function setColor(colorString) {
+			$.get('/setcolor/' + colorString, function(data, status){
+				$("#thecolor").text(data.result);
+			});
+		}
+	
 		$("#color-picker").spectrum({
 			color: "#808",
 			flat: true,
 			showInput: true,
+			clickoutFiresChange: false,
 			preferredFormat: "rgb",
 			change: function(tinycolor) {
-				setColor(tinycolor.toHex())
+				setColor(tinycolor.toHex());
 			}
 		});
-	</script>
-	{% endblock %}
 
-	{% block extra_scripts %}
-	<script>
-		function setColor(colorString) {
-			$.get('/setcolor/' + colorString, function(data, status){
-				$("#thecolor").text(data.result)
+		$("#On").click(function() {
+			$.get('/on', function(data, status){
+				$("#thecolor").text(data.result);
 			});
-		}
+		});
+	
+		$("#Off").click(function() {
+			$.get('/off', function(data, status){
+				$("#thecolor").text(data.result);
+			});
+		});
 	</script>
 	{% endblock %}
