@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, jsonify
 from ledstrip import ledstrip
 
 app = Flask(__name__)
@@ -14,15 +14,17 @@ def on():
 	leds.on()
 	return redirect('/')
 
-@app.route('/off', methods=['POST'])
+@app.route('/off', methods=['POST', 'GET'])
 def off():
+	print('Off')
 	leds.off()
 	return redirect('/')
 
-@app.route('/setcolor/<color>', methods=['POST'])
+@app.route('/setcolor/<color>', methods=['POST', 'GET'])
 def setColor(color):
 	leds.set_color(color)
-	return redirect('/')
+	print ("Colorx: {}".format(color))
+	return jsonify(result=color)
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0')

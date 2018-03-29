@@ -3,7 +3,7 @@
 	<form action="/on" method="post">
 		<button type="submit" id="On" class="btn btn-default">On</button>
 	</form>
-	<form action="/off" method="post">
+	<form action="/off" method="get">
 		<button type="submit" id="Off" class="btn">Off</button>
 	</form>
 	<form action="/what" method="post">
@@ -33,13 +33,10 @@
 	{% block extra_scripts %}
 	<script>
 		function setColor(colorString) {
-			var form = $('<form></form>');
-
-			form.attr("method", "post");
-			form.attr("action", "/setcolor/" + colorString);
-
-			$(document.body).append(form);
-			form.submit();
+			alert("colorString=" + colorString);
+			$.get('/setcolor/' + colorString, function(data, status){
+				alert("Color: " + data.result + "\nStatus: " + status);
+			});
 		}
 	</script>
 	{% endblock %}
