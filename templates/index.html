@@ -6,9 +6,11 @@
 	<form action="/off" method="get">
 		<button type="submit" id="Off" class="btn">Off</button>
 	</form>
-	<form action="/what" method="post">
-		<input type='text' id="color-picker" />
-	</form>
+	
+	<input type='text' id="color-picker" />
+	
+	<p id="thecolor">color</p>
+
 	{% endblock %}
 
 	{% block extra_styles %}
@@ -33,9 +35,8 @@
 	{% block extra_scripts %}
 	<script>
 		function setColor(colorString) {
-			alert("colorString=" + colorString);
 			$.get('/setcolor/' + colorString, function(data, status){
-				alert("Color: " + data.result + "\nStatus: " + status);
+				$("#thecolor").text(data.result)
 			});
 		}
 	</script>

@@ -23,7 +23,7 @@ def off():
 @app.route('/setcolor/<color>', methods=['POST', 'GET'])
 def setColor(color):
 	leds.set_color(color)
-	print ("Colorx: {}".format(color))
+	print ("Color: {}".format(color))
 	return jsonify(result=color)
 
 if __name__ == '__main__':
