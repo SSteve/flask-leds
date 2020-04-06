@@ -1,4 +1,5 @@
-# Import the PCA9685 module.
+# The Adafruit PCA9685 module is a breakout board for the PCA9685
+# PWM LED/Servo controller.
 import Adafruit_PCA9685
 
 class ledstrip():
@@ -23,7 +24,7 @@ class ledstrip():
 		r = int(rHex, 16)
 		g = int(gHex, 16)
 		b = int(bHex, 16)
-		print('Color: {} {} {} {}'.format(color, r, g, b))
+		
 		self.pwm.set_pwm(0, 0, int(4095 * r / 255))
 		self.pwm.set_pwm(1, 0, int(4095 * g / 255))
 		self.pwm.set_pwm(2, 0, int(4095 * b / 255))
