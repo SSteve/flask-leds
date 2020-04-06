@@ -8,41 +8,46 @@ Start from a Raspbian Lite installation
 
 ### Install system software:
 
-        sudo apt-get install vim samba samba-common-bin python3-pip libffi-dev
+    sudo apt-get install vim samba samba-common-bin python3-pip libffi-dev
 	
 ### Install Adafruit PWM driver
 
-        sudo apt-get install git build-essential python-dev
-        cd ~
-        git clone https://github.com/adafruit/Adafruit_Python_PCA9685.git
-        cd Adafruit_Python_PCA9685
-        sudo python setup.py install
+    sudo apt-get install git build-essential python-dev
+    cd ~
+    git clone https://github.com/adafruit/Adafruit_Python_PCA9685.git
+    cd Adafruit_Python_PCA9685
+    sudo python3 setup.py install
     
 ### Install and configure `virtualenv` and `virtualenvwrapper`
 
-        sudo pip3 install virtualenv
-        sudo pip3 install virtualenvwrapper
+    sudo pip3 install virtualenv
+    sudo pip3 install virtualenvwrapper
         
-        mkdir ~/projects
+    mkdir ~/projects
         
 Add these lines to .profile:
 
-        export WORKON_HOME=$HOME/.virtualenvs
-        export PROJECT_HOME=$HOME/projects
-        export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-        source /usr/local/bin/virtualenvwrapper.sh
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/projects
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    source /usr/local/bin/virtualenvwrapper.sh
 
 Reload .profile with `source .profile`        
 
 ## Set up Flask project
 
-        mkproject <projectname>
-        pip install Flask Adafruit_PCA9685
+    mkproject <projectname>
+    pip install Flask Adafruit_PCA9685
 
 
 ## Set up virtualenvwrapper hooks for the leds project
 
 Copy the contents of the `virtualenvwrapper` directory to ~/.virtualenvs/leds/bin
+
+## Run the server
+
+    workon leds
+    flask run -h 0.0.0.0
 
 ## Wiring diagram
 
